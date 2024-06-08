@@ -1,13 +1,14 @@
-function createRaindrop() {
-    const raindrop = document.createElement('div');
-    raindrop.classList.add('raindrop');
-    raindrop.style.left = `${Math.random() * window.innerWidth}px`;
-    raindrop.style.animationDuration = `${Math.random() * 0.5 + 0.5}s`; // 0.5초에서 1초 사이의 랜덤한 지속시간
-    document.querySelector('.sky').appendChild(raindrop);
-
+document.getElementById('blackScreen').addEventListener('click', function(event) {
+    const img = document.createElement('img');
+    img.src = 'path/to/your/image.png'; // 이미지 파일 경로를 여기에 입력하세요
+    img.style.position = 'absolute';
+    img.style.left = `${event.clientX}px`;
+    img.style.top = `${event.clientY}px`;
+    img.style.transform = 'translate(-50%, -50%)';
+    
+    document.getElementById('blackScreen').appendChild(img);
+    
     setTimeout(() => {
-        raindrop.remove();
-    }, 1000); // 빗방울이 사라지는 시간
-}
-
-setInterval(createRaindrop, 50); // 빗방울 생성 간격
+        img.remove();
+    }, 1000); // 1초 후에 이미지가 사라짐
+});
