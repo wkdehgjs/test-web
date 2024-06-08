@@ -1,6 +1,6 @@
 document.getElementById('blackScreen').addEventListener('click', function(event) {
     const img = document.createElement('img');
-    img.src = 'path/to/your/image.jpg'; // 이미지 파일 경로를 여기에 입력하세요
+    img.src = 'path/to/your/image.jpg';
     img.style.position = 'absolute';
     img.style.left = `${event.clientX}px`;
     img.style.top = `${event.clientY}px`;
